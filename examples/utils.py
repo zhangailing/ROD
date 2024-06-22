@@ -72,13 +72,13 @@ def munkres(pred_label, true_label):
         ai = [ind for ind, elm in enumerate(pred_label) if elm == c2]
         new_predict[ai] = c
 
-    return np.array(new_predict, dtype=np.int), indexes
+    return np.array(new_predict, dtype=np.int64), indexes
 
 def sample_mask(idx, l):
     """Create mask."""
     mask = np.zeros(l)
     mask[idx] = 1
-    return np.array(mask, dtype=np.bool)
+    return np.array(mask, dtype=np.bool_)
 
 def load_data(dataset):
     # load the data: x, tx, allx, graph
